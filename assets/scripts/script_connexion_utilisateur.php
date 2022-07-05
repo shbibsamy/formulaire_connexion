@@ -43,7 +43,7 @@
                 session_start();
                 unset($_SESSION['compte_creation']);
                 $_SESSION["nom_utilisateur"] = $login;
-                redirect('accueil_utilisateur.php');
+                redirect('mon_compte.php');
             } else {
                 $message = 'Données incorrectes';
             }

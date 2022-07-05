@@ -38,7 +38,7 @@
         /* Si le login choisi lors de la saisie correspond à celui d'un utilisateur déjà existant, on invite l'utilisateur a choisir un autre login (pour rappel, user_login est déclaré unique dans la table users) :
         */
         if (!empty($tab)) {
-            $message = 'Login existe déjà !';
+            $message = "L'utilisateur existe déjà !";
             return $message;
         } else {
         /* Si le login n'existe pas déjà dans la base

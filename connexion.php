@@ -21,7 +21,7 @@
                 <fieldset>
                     <legend>Renseignez vos données</legend>
                     <label>
-                        <span>Username :</span>
+                        <span>Nom d'utilisateur :</span>
                         <input type="text" name="login" required autofocus>
                     </label>
                     <label>

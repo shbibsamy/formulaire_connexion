@@ -5,7 +5,7 @@
                 <a href="index.php" class="menu">Accueil</a>
             </li>
             <li>        
-                <a href="accueil_utilisateur.php" class="menu">Mon Compte</a>
+                <a href="mon_compte.php" class="menu">Mon Compte</a>
             </li>
             <li>        
                 <a href="deconnexion.php" class="menu">Déconnexion</a>
@@ -20,7 +20,7 @@
                 <a href="connexion.php" class="menu">Connexion</a>
             </li>
             <li>        
-                <a href="creation_nouveau_compte.php" class="menu">Inscription</a>
+                <a href="inscription.php" class="menu">Inscription</a>
             </li>
         </ul>';
 
