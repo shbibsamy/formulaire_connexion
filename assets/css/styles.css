@@ -149,8 +149,9 @@ li {
 }
 
 a {
-    padding: 1rem;
     width: 100%;
+    padding: 1rem;
+    text-align: center;
 }
 
 a:visited {
@@ -160,16 +161,24 @@ a:visited {
 input {
     margin: 0.2rem;
     padding: 0.2rem;
+    
     color: #1e2a2e;
     background-color: #EEEBD3;
     border-radius: 10px;
 }
+
+/* surcharge autofill */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #EEEBD3 inset;
+}
+
 
 input[type=submit] {
     margin: 1rem;
     padding: 0.5rem;
     width: 200px;
     color:#EEEBD3;
+    font-size: 1.1rem;
     background-color:#1e2a2e;
     border: 2px solid #090C02;
     border-radius: 10px;
