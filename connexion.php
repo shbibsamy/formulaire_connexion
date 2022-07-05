@@ -20,7 +20,7 @@
                 <fieldset>
                     <legend>Renseignez vos données</legend>
                     <label>
-                        <span>Nom d'utilisateur :</span>
+                        <span>Pseudo :</span>
                         <input type="text" name="login" required autofocus>
                     </label>
                     <label>

@@ -28,7 +28,7 @@
                         <input type='text' name='prenom' required>
                     </label>
                     <label>
-                        <span>Username :</span>
+                        <span>Pseudo :</span>
                         <input type='text' name='login' required>
                     </label>
                     <label>
