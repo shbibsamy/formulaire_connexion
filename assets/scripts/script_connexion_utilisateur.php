@@ -1,11 +1,17 @@
 <?php
     require './assets/scripts/script_connexion_bdd.php';
+    function redirect($url) { 
+        // active la mise en mémoire tampon d'entrée
+        ob_start();
+        header('Location: '.$url);
+        // désactive la mise en mémoire tampon de sortie
+        ob_end_flush();
+        //arrête le reste du code de la page si la redirection est ignorée. La façon de le faire est d’ajouter die() ou exit() après votre redirection 
+        die(); 
+    }
+    $message = '';
     // On cherche l'utilisateur dans la base
-    //
-    // Garnissage brut des données (juste pour l'exemple) :
     if(isset($_POST['submit'])) {
-        $_POST["login"] = "alaindeloin";
-        $_POST["pass"] = "azertyuiop";
         // On nettoie ce que l'utilisateur a saisi afin de s'assurer que ce n'est pas du code malveillant :
         $login = htmlspecialchars($_POST["login"]); 
         $pass = htmlspecialchars($_POST["pass"]);
@@ -25,7 +31,7 @@
         /* Test permettant de déterminer si la requête à renvoyé un résultat (si le tableau est vide - fonction empty() -, aucun utilisateur n'existe avec ce 'user_login') :
         */
         if(empty($tab)) {
-            echo "L'utilisateur n'existe pas.";
+            $message = "L'utilisateur n'existe pas.";
         } else {
             /* Maintenant nous allons devoir traiter le mot de passe.
             En effet les mots de passe ne doivent jamais être inscrits en brut dans la BDD.
@@ -33,9 +39,13 @@
             Nous allons donc 'décryter' - fonction password_verify() - le mot de passe qu'a renvoyé la requête et le comparer à celui saisi par l'utilisateur :
             */
             if (password_verify($pass, $tab[0]["user_password"])) {
-                echo "L'utilisateur existe et le mot de passe est OK.";
+                $message = '';
+                session_start();
+                unset($_SESSION['compte_creation']);
+                $_SESSION["nom_utilisateur"] = $login;
+                redirect('accueil_utilisateur.php');
             } else {
-                echo "L'utilisateur existe mais mot de passe est incorrect !";
+                $message = 'Données incorrectes';
             }
         }
     }

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php require './assets/scripts/script_connexion_utilisateur.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,21 +12,27 @@
 </head>
 <body>
     <div class="wrapper">
-        <h1>Connexion</h1>
-        <form action="index.php" method="POST">
-            <fieldset>
-                <legend>Renseignez vos données</legend>
-                <label>
-                    <span>Username :</span>
-                    <input type="text" name="login">
-                </label>
-                <label>
-                    <span>MDP :</span>
-                    <input type="password" name="pass">
-                </label>
-                <input type="submit" name="submit">
-            </fieldset>
-        </form>
+        <header>
+            <h1>Connexion</h1>
+            <?php require 'menu.php'; ?>
+        </header>  
+        <main>
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Renseignez vos données</legend>
+                    <label>
+                        <span>Username :</span>
+                        <input type="text" name="login" required autofocus>
+                    </label>
+                    <label>
+                        <span>MDP :</span>
+                        <input type="password" name="pass" required>
+                    </label>
+                    <input type="submit" name="submit">
+                </fieldset>
+            </form>
+            <?php echo "<div class='message'><span>$message</span></div>" ?>
+        </main>
     </div>
 </body>
 </html>
